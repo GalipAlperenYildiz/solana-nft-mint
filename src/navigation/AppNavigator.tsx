@@ -14,9 +14,34 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Mint">
-        <Stack.Screen name="Mint" component={MintScreen} />
-        <Stack.Screen name="Gallery" component={GalleryScreen} />
+      <Stack.Navigator 
+        initialRouteName="Mint"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#f5f5f5',
+          },
+          headerTintColor: '#333',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
+        <Stack.Screen 
+          name="Mint" 
+          component={MintScreen} 
+          options={{
+            title: 'NFT Mint',
+            headerTitle: 'NFT Mint Et'
+          }}
+        />
+        <Stack.Screen 
+          name="Gallery" 
+          component={GalleryScreen} 
+          options={{
+            title: 'NFT Galerisi',
+            headerTitle: 'NFT Galerisi'
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

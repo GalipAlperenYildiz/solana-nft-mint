@@ -1,43 +1,41 @@
 import axios from 'axios';
 import { Buffer } from 'buffer';
 
-const INFURA_PROJECT_ID = 'ff9943ef1b2d42038e14c22689735668';
-const INFURA_PROJECT_SECRET = 'kiyVjEcV4sk51pMylLa9QbkpYcL3W26iBd9vrcqMJjmeJqM5v2zDXg';
-
-const auth =
-  'Basic ' + Buffer.from(INFURA_PROJECT_ID + ':' + INFURA_PROJECT_SECRET).toString('base64');
-
+// Mock IPFS servisi - gerçek IPFS yerine test için
 export async function uploadFileToIPFS(fileUri: string, fileName: string): Promise<string> {
-  // Dosyayı base64 olarak oku
-  const response = await fetch(fileUri);
-  const blob = await response.blob();
-
-  const formData = new FormData();
-  formData.append('file', blob, fileName);
-
-  const res = await axios.post('https://ipfs.infura.io:5001/api/v0/add', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      Authorization: auth,
-    },
-  });
-
-  const hash = res.data.Hash;
-  return `https://ipfs.io/ipfs/${hash}`;
+  try {
+    console.log('Mock IPFS upload başladı:', fileName);
+    
+    // Simüle edilmiş upload süresi
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Mock IPFS hash oluştur
+    const mockHash = 'Qm' + Math.random().toString(36).substring(2, 15);
+    const mockUrl = `https://ipfs.io/ipfs/${mockHash}`;
+    
+    console.log('Mock IPFS upload tamamlandı:', mockUrl);
+    return mockUrl;
+  } catch (error: any) {
+    console.error('Mock IPFS upload error:', error);
+    throw new Error(`IPFS upload failed: ${error.message || 'Unknown error'}`);
+  }
 }
 
 export async function uploadMetadataToIPFS(metadata: object): Promise<string> {
-  const blob = new Blob([JSON.stringify(metadata)], { type: 'application/json' });
-  const formData = new FormData();
-  formData.append('file', blob, 'metadata.json');
-
-  const res = await axios.post('https://ipfs.infura.io:5001/api/v0/add', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      Authorization: auth,
-    },
-  });
-
-  const hash = res.data.Hash;
-  return `https://ipfs.io/ipfs/${hash}`;
+  try {
+    console.log('Mock metadata upload başladı');
+    
+    // Simüle edilmiş upload süresi
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Mock metadata hash oluştur
+    const mockHash = 'Qm' + Math.random().toString(36).substring(2, 15);
+    const mockUrl = `https://ipfs.io/ipfs/${mockHash}`;
+    
+    console.log('Mock metadata upload tamamlandı:', mockUrl);
+    return mockUrl;
+  } catch (error: any) {
+    console.error('Mock metadata upload error:', error);
+    throw new Error(`IPFS metadata upload failed: ${error.message || 'Unknown error'}`);
+  }
 } 
