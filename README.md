@@ -91,6 +91,7 @@ solana-nft-mint-main/
 │   └── README.md              # Backend dokümantasyonu
 └── start-app.sh               # Otomatik başlatma scripti
 ```
+#### src/service/wallet.ts moc public key eklemeyi unutmayın. - const mockPublicKey = 'buraya key gelecek '; #### 
 
 ## 🔧 API Endpoints
 
