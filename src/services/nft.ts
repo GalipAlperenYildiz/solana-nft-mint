@@ -35,9 +35,9 @@ export class NFTService {
       const mockNFTs: NFTData[] = [
         {
           id: '1',
-          name: 'My First NFT',
-          image: 'https://via.placeholder.com/300x300/4CAF50/FFFFFF?text=My+NFT+1',
-          description: 'İlk NFT\'m',
+          name: 'Bordro #1',
+          image: 'https://dogukanerdem.av.tr/wp-content/uploads/2022/07/Bordro-Ornegi-1.png',
+          description: 'Bordro Örnegi',
           mintAddress: 'NFT' + Math.random().toString(36).substring(2, 15).toUpperCase(),
           createdAt: new Date().toISOString(),
           owner: walletAddress,
@@ -48,9 +48,9 @@ export class NFTService {
         },
         {
           id: '2',
-          name: 'Digital Art #1',
-          image: 'https://via.placeholder.com/300x300/2196F3/FFFFFF?text=Digital+Art',
-          description: 'Dijital sanat eseri',
+          name: 'Bordro #2',
+          image: 'https://dogukanerdem.av.tr/wp-content/uploads/2022/07/Bordro-Ornegi-1.png',
+          description: 'Bordro Örnegi',
           mintAddress: 'NFT' + Math.random().toString(36).substring(2, 15).toUpperCase(),
           createdAt: new Date().toISOString(),
           owner: walletAddress,

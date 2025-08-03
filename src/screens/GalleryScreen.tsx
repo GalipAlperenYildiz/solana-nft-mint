@@ -4,11 +4,11 @@ import { Button, Text, Card, FAB, Chip } from 'react-native-paper';
 import { nftService, NFTData } from '../services/nft';
 import { walletService } from '../services/wallet';
 
-// Dummy NFT listesi (backend'den çekmek istersen burada güncelleyebilirsin)
+// Dummy NFT listesi (backend'den çekmek istersen burada güncelle)
 const dummyNFTs: NFTData[] = [
   { 
     id: '1', 
-    name: 'NFT 1', 
+    name: 'Bordro Örneği', 
     image: 'https://via.placeholder.com/300x300/4CAF50/FFFFFF?text=NFT+1',
     description: 'İlk NFT örneği',
     mintAddress: 'ABC123...',
@@ -17,7 +17,7 @@ const dummyNFTs: NFTData[] = [
   },
   { 
     id: '2', 
-    name: 'NFT 2', 
+    name: 'Bordro Örneği', 
     image: 'https://via.placeholder.com/300x300/2196F3/FFFFFF?text=NFT+2',
     description: 'İkinci NFT örneği',
     mintAddress: 'DEF456...',
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     color: '#666'
   },
   listContainer: {
-    paddingBottom: 80 // FAB için alan bırak
+    paddingBottom: 80 
   },
   card: { 
     marginVertical: 8,

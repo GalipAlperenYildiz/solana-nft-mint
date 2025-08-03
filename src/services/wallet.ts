@@ -28,7 +28,7 @@ export class WalletService {
   async connectWallet(): Promise<WalletInfo> {
     try {
       // Mock wallet public key
-      const mockPublicKey = '7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU';
+      const mockPublicKey = 'buraya key gelecek ';
       
       // Mock balance
       const mockBalance = 2.5;
