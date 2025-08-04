@@ -24,13 +24,13 @@
 - FAB ile yeni NFT mint etme
 - NFT detayları (mint address, tarih)
   
-## WalletConnect.tsx --->
-Mock yerine gerçek cüzdan kullanmak için:
-connectWallet() içinde Solana Mobile Wallet Adapter (Phantom/Backpack/WalletConnect) kodunu çağırın.
-Dönen publicKey’i this.walletInfo.publicKey’e atayın.
-Gerçek cüzdan bağlantısı kurulduğunda connected: true kalmalı.
-updateBalance() zaten gerçek RPC çağrısını yaptığından, gerçek SOL bakiyenizi döner.
-Böylece WalletService mock’tan prodüksiyona geçişte sadece connectWallet() implementasyonunu değiştirmeniz yeterli olur; diğer kodunuz el değiştirmeden çalışmaya devam eder.
+**Gerçek Cüzdan Entegrasyonu**
+Mock yerine gerçek cüzdan kullanmak için(walletConnect.tsx):
+
+1. `connectWallet()` içinde Solana Mobile Wallet Adapter (Phantom, Backpack veya WalletConnect) kodunu çağırın ve kullanıcıdan cüzdan erişimi izni isteyin.
+2. Dönen `publicKey` değerini `this.walletInfo.publicKey`’e atayın ve `connected: true` durumunu güncelleyin.
+3. `updateBalance()` metodu, paylaşımlı `Connection` nesnesi üzerinden gerçek SOL bakiyesini sorgular.
+4. Bu sayede mock implementasyondan gerçek cüzdana geçiş sadece `connectWallet()`’ı güncelleyerek yapılabilir; diğer servis metotları aynı şekilde çalışmaya devam eder.
 
 ## 🛠️ Kurulum
 
