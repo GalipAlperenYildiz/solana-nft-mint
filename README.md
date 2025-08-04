@@ -158,6 +158,4 @@ solana-nft-mint-main/
 4. Push yapın (`git push origin feature/amazing-feature`)
 5. Pull Request oluşturun
 
-## 📄 Lisans
 
-MIT License - Detaylar için `LICENSE` dosyasına bakın. 
